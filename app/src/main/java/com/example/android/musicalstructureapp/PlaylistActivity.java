@@ -7,26 +7,22 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class PlaylistActivity extends AppCompatActivity {
 
     private TextView textviewPlayer, textviewAlbums, textviewPlaylists, textviewSettings;
-    private ArrayList<clsPlaylist> playlists;
-    private ArrayList<clsSong> songListAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
 
-        playlists =  (ArrayList<clsPlaylist>) getIntent().getSerializableExtra("playlists");
-        songListAll = (ArrayList<clsSong>) getIntent().getSerializableExtra("fullSongList");
-
+        // Initialise all the views
         initialiseViews();
 
+        // Initialise all the onClickListeners
         initialiseOnClickListeners();
 
+        // Initialise the ArrayAdapter
         initialiseArrayAdapter();
     }
 
@@ -44,6 +40,7 @@ public class PlaylistActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent playerIntent = new Intent(PlaylistActivity.this, PlayActivity.class);
+                playerIntent.putExtra("alreadyLoaded",PlayActivity.alreadyLoaded);
                 // Start the new activity
                 startActivity(playerIntent);
                 finish();
@@ -56,8 +53,6 @@ public class PlaylistActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent SongsIntent = new Intent(PlaylistActivity.this, SongsActivity.class);
-                SongsIntent.putExtra("playlists", playlists);
-                SongsIntent.putExtra("fullSongList", songListAll);
                 // Start the new activity
                 startActivity(SongsIntent);
                 finish();
@@ -70,32 +65,28 @@ public class PlaylistActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent settingsIntent = new Intent(PlaylistActivity.this, SettingsActivity.class);
-                settingsIntent.putExtra("playlists", playlists);
-                settingsIntent.putExtra("fullSongList", songListAll);
                 // Start the new activity
                 startActivity(settingsIntent);
                 finish();
             }
         });
-
     }
 
     private void initialiseArrayAdapter(){
-
-        // Create an ArrayAdapter, whose data source is a list of Strings. The
+        // Create an ArrayAdapter, whose data source is a list of playlists. The
         // adapter knows how to create layouts for each item in the list, using the
-        // simple_list_item_1.xml layout resource defined in the Android framework.
-        // This list item layout contains a single TextView, which the adapter will set to
-        // display a single word.
-        PlaylistAdapter itemsAdapter = new PlaylistAdapter(this, playlists);
+        // playlist_listitem.xml layout resource defined in the Android framework.
+        // This list item layout contains one TextView, which the adapter will set to
+        // display the information.
+        PlaylistAdapter itemsAdapter = new PlaylistAdapter(this, PlayActivity.playlists);
 
         // Find the ListView object in the view hierarchy of the Activity.
-        // There should be a ListView with the view ID called list, which is declared in the
-        // words_listayout file.
+        // There should be a ListView with the view ID called allPlaylistsListView, which is declared in the
+        // PlaylistActivity layout file.
         ListView listView = (ListView) findViewById(R.id.allPlaylistsListView);
 
         // Make the ListView use the ArrayAdapter we created above, so that the
-        // ListView will display list items for each word in the list of words.
+        // ListView will display list items for each playlist in the list of playlists.
         // Do this by calling the setAdapter method on the ListView object and pass in
         // 1 argument, which is the ArrayAdapter with the variable name itemsAdapter.
         listView.setAdapter(itemsAdapter);

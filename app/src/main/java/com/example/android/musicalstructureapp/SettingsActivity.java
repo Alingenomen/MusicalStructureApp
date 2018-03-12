@@ -20,10 +20,10 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        playlists =  (ArrayList<clsPlaylist>) getIntent().getSerializableExtra("playlists");
-        songListAll = (ArrayList<clsSong>) getIntent().getSerializableExtra("fullSongList");
-
+        // Initialise all the views
         initialiseViews();
+
+        // Initialise all the onClickListeners
         initialiseOnClickListeners();
     }
 
@@ -53,8 +53,6 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent songsIntent = new Intent(SettingsActivity.this, SongsActivity.class);
-                songsIntent.putExtra("playlists", playlists);
-                songsIntent.putExtra("fullSongList", songListAll);
                 // Start the new activity
                 startActivity(songsIntent);
                 finish();
@@ -67,8 +65,6 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent playlistIntent = new Intent(SettingsActivity.this, PlaylistActivity.class);
-                playlistIntent.putExtra("playlists", playlists);
-                playlistIntent.putExtra("fullSongList", songListAll);
                 // Start the new activity
                 startActivity(playlistIntent);
                 finish();
