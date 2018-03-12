@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/albumArtListItem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        tools:src="@drawable/irie_revoltes_irie_revoltes"
+        />
+
+    <LinearLayout
+        android:id="@+id/songInformationListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/albumArtListItem"
+        android:layout_margin="8dp">
+        <TextView
+            android:id="@+id/songArtistListItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+
+            tools:text="Irie Revoltes"
+            />
+        <TextView
+            android:id="@+id/songAlbumListItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+
+            tools:text="Irie Revoltes (2015)"
+            />
+        <TextView
+            android:id="@+id/songTitleListItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+
+            tools:text="08 - Peur de la liberté"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
