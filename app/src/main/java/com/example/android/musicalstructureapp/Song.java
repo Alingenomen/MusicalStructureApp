@@ -7,8 +7,6 @@ import java.io.Serializable;
  */
 
 public class Song implements Serializable{
-
-
     private String strTitle;
     private String strArtist;
     private String strAlbum;
