@@ -1,115 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.musicalstructureapp.PlayActivity"
-    android:background="@drawable/background">
-
+    android:background="@drawable/background"
+    tools:context="com.example.android.musicalstructureapp.PlayActivity">
     <TextView
         android:id="@+id/headerPlayActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eargasm"
-        android:textSize="32sp"
-        android:textColor="#c8c8c8"
         android:layout_margin="16dp"
-        android:textStyle="bold"/>
-
+        android:text="Eargasm"
+        android:textColor="#c8c8c8"
+        android:textSize="32sp"
+        android:textStyle="bold" />
     <View
         android:id="@+id/dividerBelowEargasm"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#c8c8c8"
         android:layout_below="@id/headerPlayActivity"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
-
+        android:layout_marginRight="16dp"
+        android:background="#c8c8c8" />
     <LinearLayout
         android:id="@+id/menuNowPlaying"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/dividerBelowEargasm">
-
+        android:layout_below="@id/dividerBelowEargasm"
+        android:orientation="horizontal">
         <TextView
             android:id="@+id/textviewPlayerSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:text="@string/player"
-            android:textColor="#c8c8c8"
-            android:layout_marginLeft="8dp"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"/>
+            android:textColor="#c8c8c8"
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/textviewAlbumsSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:text="@string/songs"
-            android:textColor="#c8c8c8"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"/>
+            android:textColor="#c8c8c8"
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/textviewPlaylistsSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:text="@string/playlists"
-            android:textColor="#c8c8c8"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"/>
+            android:textColor="#c8c8c8"
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/textviewSettingsSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:text="@string/settings"
-            android:textColor="#c8c8c8"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"
-            android:textStyle="bold"
+            android:textColor="#c8c8c8"
             android:textSize="18sp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
-
     <View
         android:id="@+id/dividerbelowMenuNowPlaying"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#c8c8c8"
         android:layout_below="@id/menuNowPlaying"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
-
+        android:layout_marginRight="16dp"
+        android:background="#c8c8c8" />
     <LinearLayout
         android:id="@+id/settingsList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/dividerbelowMenuNowPlaying"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_below="@id/dividerbelowMenuNowPlaying">
+        android:layout_marginTop="16dp">
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reverse playtime?"
-            android:switchPadding="16dp"
+            android:layout_gravity="center_horizontal"
             android:paddingLeft="16dp"
-            android:textColor="#c8c8c8"
-            android:layout_gravity="center_horizontal"/>
+            android:switchPadding="16dp"
+            android:text="Reverse playtime?"
+            android:textColor="#c8c8c8" />
     </LinearLayout>
-
-
 </RelativeLayout>

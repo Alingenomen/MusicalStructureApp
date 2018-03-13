@@ -11,13 +11,11 @@ import java.util.ArrayList;
 public class PlayActivity extends AppCompatActivity {
 
     private TextView textviewPlayer, textviewAlbums, textviewPlaylists, textviewSettings;
-    private ArrayList<clsSong> songListMouvemantMondiale2011 = new ArrayList<>();
-    private ArrayList<clsSong> songListIrieRevoltes2015 = new ArrayList<>();
-
-    public static ArrayList<clsSong> songListAll = new ArrayList<>();
-    public static ArrayList<clsPlaylist> playlists = new ArrayList<>();
-    private clsPlaylist playlist;
-
+    private ArrayList<Song> songListMouvemantMondiale2011 = new ArrayList<>();
+    private ArrayList<Song> songListIrieRevoltes2015 = new ArrayList<>();
+    public static ArrayList<Song> songListAll = new ArrayList<>();
+    public static ArrayList<Playlist> playlists = new ArrayList<>();
+    private Playlist playlist;
     public static boolean alreadyLoaded = false;
 
 
@@ -82,118 +80,113 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     private void initialiseObjects(){
-
         if (!alreadyLoaded){
-            clsSong songToAdd;
+            Song songToAdd;
 
             // Irie revoltes - Irie revoltes (2015)
-            songToAdd = new clsSong("01 - Rühe vor dem sturm", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("01 - Rühe vor dem sturm", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("02 - Stopper", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("02 - Stopper", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("03 - Jamais", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("03 - Jamais", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("04 - Squatte", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("04 - Squatte", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("05 - Zu schnell", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("05 - Zu schnell", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("06 - Jetzt ist schluss", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("06 - Jetzt ist schluss", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("07 - A tout prix", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("07 - A tout prix", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("08 - Peur de la liberté", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("08 - Peur de la liberté", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("09 - Danse", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("09 - Danse", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("10 - Jetzt!", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("10 - Jetzt!", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("11 - Privatisation", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("11 - Privatisation", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("12 - Fäuse hoch", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("12 - Fäuse hoch", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("13 - Décision", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("13 - Décision", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
-            songToAdd = new clsSong("14 - Alles anders", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
+            songToAdd = new Song("14 - Alles anders", "Irie Revoltes", "Irie revoltes (2015)",R.drawable.irie_revoltes_irie_revoltes);
             songListAll.add(songToAdd);
             songListIrieRevoltes2015.add(songToAdd);
 
-            playlist = new clsPlaylist("Irie revoltes - Irie revoltes (2015)",songListIrieRevoltes2015);
+            playlist = new Playlist("Irie revoltes - Irie revoltes (2015)",songListIrieRevoltes2015);
             playlists.add(playlist);
 
             // Irie revoltes - Mouvement Mondiale (2011)
-            songToAdd = new clsSong("01 - Back again", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("01 - Back again", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("02 - Explosion", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("02 - Explosion", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("03 - Travailler", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("03 - Travailler", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("04 - Merci", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("04 - Merci", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("05 - Aufstehn", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("05 - Aufstehn", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("06 - Il est là", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("06 - Il est là", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("07 - Tes yeux", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("07 - Tes yeux", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("08 - Antifaschist", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("08 - Antifaschist", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("09 - On en a marre", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("09 - On en a marre", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("10 - Des fois", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("10 - Des fois", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("11 - Utopie", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("11 - Utopie", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("12 - Manipubation", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("12 - Manipubation", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("13 - Zeit ist geld", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("13 - Zeit ist geld", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("14 - Motivé", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("14 - Motivé", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("15 - Poulet", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("15 - Poulet", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("16 - Outro", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("16 - Outro", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
-            songToAdd = new clsSong("17 - Merci (Radio edit)", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
+            songToAdd = new Song("17 - Merci (Radio edit)", "Irie revoltes", "Mouvement Mondiale (2011)", R.drawable.irie_revoltes_movement_mondiale);
             songListAll.add(songToAdd);
             songListMouvemantMondiale2011.add(songToAdd);
 
-            playlist = new clsPlaylist("Irie revoltes - Mouvement Mondiale (2011)",songListMouvemantMondiale2011);
+            playlist = new Playlist("Irie revoltes - Mouvement Mondiale (2011)",songListMouvemantMondiale2011);
             playlists.add(playlist);
 
             alreadyLoaded = true;
         }
-
-
-
     }
-
 }

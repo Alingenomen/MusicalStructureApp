@@ -67,7 +67,6 @@ public class SongsActivity extends AppCompatActivity {
                 startActivity(settingsIntent);
             }
         });
-
     }
 
     private void initialiseArrayAdapter(){

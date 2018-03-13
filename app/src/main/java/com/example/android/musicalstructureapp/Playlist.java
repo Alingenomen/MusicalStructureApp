@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * Created by DTPAdmin on 5/03/2018.
  */
 
-public class clsPlaylist implements Serializable {
+public class Playlist implements Serializable {
 
     private String strName;
-    private ArrayList<clsSong> songlist = new ArrayList<>();
+    private ArrayList<Song> songlist = new ArrayList<>();
 
-    public clsPlaylist(String name, ArrayList<clsSong> listSongs){
+    public Playlist(String name, ArrayList<Song> listSongs){
         strName = name;
         songlist = listSongs;
     }
@@ -21,7 +21,7 @@ public class clsPlaylist implements Serializable {
         return strName;
     }
 
-    public ArrayList<clsSong> getSonglist(){
+    public ArrayList<Song> getSonglist(){
         return songlist;
     }
 }

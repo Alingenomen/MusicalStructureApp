@@ -16,9 +16,9 @@ import java.util.ArrayList;
  * Created by DTPAdmin on 7/03/2018.
  */
 
-public class SongAdapter extends ArrayAdapter<clsSong> {
+public class SongAdapter extends ArrayAdapter<Song> {
 
-    public SongAdapter(Activity context, ArrayList<clsSong> Songs) {
+    public SongAdapter(Activity context, ArrayList<Song> Songs) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
@@ -37,7 +37,7 @@ public class SongAdapter extends ArrayAdapter<clsSong> {
         }
 
         // Get the Word object located at this position in the list
-        clsSong currentSong = getItem(position);
+        Song currentSong = getItem(position);
 
         // Find the TextViews in the song_listitem.xml layout with their IDs
         // Get the information from the current song object and
@@ -46,19 +46,16 @@ public class SongAdapter extends ArrayAdapter<clsSong> {
         ImageView songAlbumArtImageView = listItemView.findViewById(R.id.albumArtListItem);
         songAlbumArtImageView.setImageResource(currentSong.getAlbumart());
 
-
         TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.songArtistListItem);
         songArtistTextView.setText(currentSong.getArtist());
-
 
         TextView songAlbumTextView = (TextView) listItemView.findViewById(R.id.songAlbumListItem);
         songAlbumTextView.setText(currentSong.getAlbum());
 
-
         TextView songTitleTextView = (TextView) listItemView.findViewById(R.id.songTitleListItem);
         songTitleTextView.setText(currentSong.getTitle());
 
-        // Return the whole list item layout (containing 3 TextViews)
+        // Return the whole list item layout
         // so that it can be shown in the ListView
         return listItemView;
     }

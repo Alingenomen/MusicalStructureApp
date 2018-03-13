@@ -12,9 +12,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     TextView textviewPlayer, textviewAlbums, textviewPlaylists, textviewSettings;
 
-    private ArrayList<clsPlaylist> playlists;
-    private ArrayList<clsSong> songListAll;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +67,5 @@ public class SettingsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }
